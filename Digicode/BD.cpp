@@ -3,7 +3,7 @@
 using namespace std;
 #include "BD.h"
 
-#define NOM_FIC "../DigicodeIUT/Base.txt"
+#define NOM_FIC "Base.txt"
 #define MODE ios::in
 
 bool nsDigicode::BD::verifier (int code)  

@@ -5,12 +5,21 @@
 
 namespace nsDigicode {
 
+    class Chrono;
+
 	class ObjetTempo 
     {
+    private:
+        int delai;
+    protected:
+        int attente = 0;
+        Chrono* chrono;
     public:
-        Chrono* getChrono() {}
-        void finTempo() {}
-        int getDelai() {}
+        ObjetTempo(nsDigicode::Chrono* &chrono, const int &delai);
+        ~ObjetTempo();
+        Chrono* getChrono();
+        void finTempo();
+        int getDelai();
     };
 	
 } /* ns_Digicode */

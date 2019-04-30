@@ -2,13 +2,30 @@
 #define _INTERFACE
 #include <string>
 
+#include "Chrono.h"
+#include "ObjetTempo.h"
+#include "clavier.h"
+#include "voyant.h"
+
 namespace nsDigicode {
 
-	class InterfaceDeSaisie //To do
+    class InterfaceDeSaisie : public ObjetTempo
 	{
-		//To do
-		void statut(std::string="\n");
-		//To do
+    private:
+        Voyant* voyantRouge;
+        Voyant* voyantVert;
+        Clavier clavier;
+        int nbChiffresAttendus;
+
+    public:
+        std::string statut();
+        InterfaceDeSaisie(nsDigicode::Chrono* &chrono, const int &delai, const int &nbChiffres);
+        ~InterfaceDeSaisie();
+        int saisirCode();
+
+        Voyant* getRouge() const;
+        Voyant* getVert() const;
+
 	}; // InterfaceDeSaisie
 	
 } /* ns_Digicode */

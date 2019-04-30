@@ -2,7 +2,7 @@
 #include <time.h>
 #include <pthread.h>
 #include "ObjetTempo.h"
-#include "Chrono.h"         
+#include "Chrono.h"
 
 void nsDigicode::Chrono::arreter (void) { actif = 0; } 
 
@@ -10,7 +10,7 @@ nsDigicode::Chrono::Chrono (void) { actif = 0; }
 
 void* nsDigicode::Chrono::compter (void * p)
 { 
-	double duree   = (clock_t) ( (ObjetTempo *) p)->getDelai ();
+    double duree   = (clock_t) ( (ObjetTempo *) p)->getDelai ();
 	Chrono *lec    = ( (ObjetTempo *) p)->getChrono ();
 	clock_t debut  = clock ();
 	double tempsEcoule = (clock () - debut) / CLOCKS_PER_SEC;
